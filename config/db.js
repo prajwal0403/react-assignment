@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const dbURL = 'mongodb+srv://prajwal:prajwal0403@banking.3hga9.mongodb.net/assignment?retryWrites=true&w=majority'
+require('dotenv').config();
+const dbURL = process.env.dbURL;
 const connection = mongoose.connect(dbURL);
 
 module.exports = { connection };

@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 app.use(express.json());
+const path = require('path');
 const router = require('./Routes/formDataRoutes');
 const { connection } = require('./config/db');
 const port = process.env.PORT || 5000;
@@ -20,7 +21,7 @@ app.get('*', (req, res) => {
 app.listen(port, async () => {
   try {
     await connection;
-    console.log('server is running at 9090');
+    console.log(`server is running at ${port}`);
   } catch (err) {
     console.log('something went wrong');
   }
